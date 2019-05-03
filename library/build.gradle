@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'org.jetbrains.dokka-android'
 apply from: rootProject.file('gradle/publish-docs.gradle')
 apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
