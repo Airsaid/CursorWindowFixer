@@ -22,7 +22,7 @@ dependencies {
 
 License
 -------
-这个项目使用 Apache License 2.0 开源协议，你需要了解这个协议，并且做到至少在使用到这个库的项目里声明或包含此协议
+这个项目使用 Apache License 2.0 开源协议，你需要了解这个协议，并且做到至少在使用到这个库的项目里声明或包含此协议：
 
 ![License.png](https://i.loli.net/2019/05/03/5ccc37c55e36b.png)
 
