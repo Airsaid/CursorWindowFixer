@@ -1,0 +1,38 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+apply plugin: 'org.jetbrains.dokka-android'
+apply from: rootProject.file('gradle/publish-docs.gradle')
+apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
+
+android {
+  compileSdkVersion buildConfig.compileSdkVersion
+
+  defaultConfig {
+    minSdkVersion buildConfig.minSdkVersion
+  }
+
+  // TODO replace with https://issuetracker.google.com/issues/72050365 once released.
+  libraryVariants.all { variant ->
+    variant.generateBuildConfigProvider.configure {
+      it.enabled = false
+    }
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+    test.java.srcDirs += 'src/test/kotlin'
+  }
+}
+
+dependencies {
+  testImplementation 'junit:junit:4.12'
+  api "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+}
