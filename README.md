@@ -10,4 +10,4 @@
 
 如果你想获得更多关于这个项目的介绍，请见我的付费分享频道：
 
-![ZSXQ](ZSXQ.jpg)
+<img src="ZSXQ.jpg" width=720/>
